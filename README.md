@@ -28,6 +28,8 @@ Int64 intTotalSeconds = objTimeString.parseToSeconds("1 d    3HOurS 25          
 // intTotalSeconds = 31557600
 ```
 
+All other examples are available [here](https://github.com/jadiagaurang/TimeString/blob/main/TimeString.Tests/utTimeStringUtil.cs).
+
 ## License
 
 Please see the [license file](https://github.com/jadiagaurang/TimeString/blob/main/LICENSE) for more information.
