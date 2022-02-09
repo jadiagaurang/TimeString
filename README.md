@@ -60,3 +60,7 @@ All other examples are available [here](https://github.com/jadiagaurang/TimeStri
 ## License
 
 Please see the [license file](https://github.com/jadiagaurang/TimeString/blob/main/LICENSE) for more information.
+
+## Credit
+
+* This repo is a .Net Port of [timestring](https://github.com/mike182uk/timestring)
