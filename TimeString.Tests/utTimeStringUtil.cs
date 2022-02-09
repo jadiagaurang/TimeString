@@ -12,7 +12,7 @@ namespace TimeString.Tests {
         public void tmParseSimple() {
             TimeStringUtil objTimeString = new TimeStringUtil();
 
-            Int64 intTotalSeconds = objTimeString.parseToSeconds("1d 6h 30m 15s");
+            Int64 intTotalSeconds = objTimeString.Parse("1d 6h 30m 15s");
 
             Assert.AreEqual(intTotalSeconds, 109815);
         }
@@ -21,7 +21,7 @@ namespace TimeString.Tests {
         public void tmParseComplex() {
             TimeStringUtil objTimeString = new TimeStringUtil();
 
-            Int64 intTotalSeconds = objTimeString.parseToSeconds("1y 2mth 4w 7d 12h 30m 15s 1000ms");
+            Int64 intTotalSeconds = objTimeString.Parse("1y 2mth 4w 7d 12h 30m 15s 1000ms");
 
             Assert.AreEqual(intTotalSeconds, 39886216);
         }
@@ -30,7 +30,7 @@ namespace TimeString.Tests {
         public void tmParseMessyString() {
             TimeStringUtil objTimeString = new TimeStringUtil();
 
-            Int64 intTotalSeconds = objTimeString.parseToSeconds("9 d  18hrs   27    mIn     3      6seC       1000        milli         ");
+            Int64 intTotalSeconds = objTimeString.Parse("9 d  18hrs   27    mIn     3      6seC       1000        milli         ");
 
             Assert.AreEqual(intTotalSeconds, 844057);
         }
@@ -47,16 +47,25 @@ namespace TimeString.Tests {
 
             TimeStringUtil objTimeString = new TimeStringUtil(objArgs);
 
-            Int64 intTotalSeconds = objTimeString.parseToSeconds("1y");
+            Int64 intTotalSeconds = objTimeString.Parse("1y");
 
             Assert.AreEqual(intTotalSeconds, 31557600);
+        }
+
+        [TestMethod]
+        public void tmParseDayToHours() {
+            TimeStringUtil objTimeString = new TimeStringUtil();
+
+            Int64 intOneDayTotalHours = objTimeString.Parse("1d", "h");
+
+            Assert.AreEqual(intOneDayTotalHours, 24);
         }
 
         [TestMethod]
         public void tmParseToTimeSpan() {
             TimeStringUtil objTimeString = new TimeStringUtil();
 
-            TimeSpan tsNineDays = objTimeString.parseToTimeSpan("9d");
+            TimeSpan tsNineDays = objTimeString.ParseToTimeSpan("9d");
 
             Assert.AreEqual(tsNineDays, new TimeSpan(9, 0, 0, 0));
         }
@@ -65,7 +74,7 @@ namespace TimeString.Tests {
         public void tmParseToDateTime() {
             TimeStringUtil objTimeString = new TimeStringUtil();
 
-            DateTime dtEighteenDays = objTimeString.parseToDateTime("18d");
+            DateTime dtEighteenDays = objTimeString.ParseToDateTime("18d");
 
             Assert.AreEqual(dtEighteenDays.DayOfWeek, DateTime.Now.AddDays(18).DayOfWeek);
         }
@@ -74,7 +83,7 @@ namespace TimeString.Tests {
         public void tmParseYear() {
             TimeStringUtil objTimeString = new TimeStringUtil();
 
-            Int64 intOneYearTotalSeconds = objTimeString.parseToSeconds("1y");
+            Int64 intOneYearTotalSeconds = objTimeString.Parse("1y");
 
             Assert.AreEqual(intOneYearTotalSeconds, 31557600);
         }
@@ -83,7 +92,7 @@ namespace TimeString.Tests {
         public void tmParseMonth() {
             TimeStringUtil objTimeString = new TimeStringUtil();
 
-            Int64 intTwoMonthsTotalSeconds = objTimeString.parseToSeconds("2mth");
+            Int64 intTwoMonthsTotalSeconds = objTimeString.Parse("2mth");
 
             Assert.AreEqual(intTwoMonthsTotalSeconds, 5259600);
         }
@@ -92,7 +101,7 @@ namespace TimeString.Tests {
         public void tmParseWeek() {
             TimeStringUtil objTimeString = new TimeStringUtil();
 
-            Int64 intFourWeeksTotalSeconds = objTimeString.parseToSeconds("4w");
+            Int64 intFourWeeksTotalSeconds = objTimeString.Parse("4w");
 
             Assert.AreEqual(intFourWeeksTotalSeconds, 2419200);
         }
@@ -101,7 +110,7 @@ namespace TimeString.Tests {
         public void tmParseDay() {
             TimeStringUtil objTimeString = new TimeStringUtil();
 
-            Int64 intSevenDaysTotalSeconds = objTimeString.parseToSeconds("7d");
+            Int64 intSevenDaysTotalSeconds = objTimeString.Parse("7d");
 
             Assert.AreEqual(intSevenDaysTotalSeconds, 604800);
         }
@@ -110,7 +119,7 @@ namespace TimeString.Tests {
         public void tmParseHour() {
             TimeStringUtil objTimeString = new TimeStringUtil();
 
-            Int64 intTwelveHoursTotalSeconds = objTimeString.parseToSeconds("12h");
+            Int64 intTwelveHoursTotalSeconds = objTimeString.Parse("12h");
 
             Assert.AreEqual(intTwelveHoursTotalSeconds, 43200);
         }
@@ -119,7 +128,7 @@ namespace TimeString.Tests {
         public void tmParseMinute() {
             TimeStringUtil objTimeString = new TimeStringUtil();
 
-            Int64 intThirtyMinutesTotalSeconds = objTimeString.parseToSeconds("30m");
+            Int64 intThirtyMinutesTotalSeconds = objTimeString.Parse("30m");
 
             Assert.AreEqual(intThirtyMinutesTotalSeconds, 1800);
         }
@@ -128,7 +137,7 @@ namespace TimeString.Tests {
         public void tmParseSecond() {
             TimeStringUtil objTimeString = new TimeStringUtil();
 
-            Int64 intTifteenSecondsTotalSeconds = objTimeString.parseToSeconds("15s");
+            Int64 intTifteenSecondsTotalSeconds = objTimeString.Parse("15s");
 
             Assert.AreEqual(intTifteenSecondsTotalSeconds, 15);
         }
@@ -137,7 +146,7 @@ namespace TimeString.Tests {
         public void tmParseMilisecond() {
             TimeStringUtil objTimeString = new TimeStringUtil();
 
-            Int64 intOneThousandMilisecondsTotalSeconds = objTimeString.parseToSeconds("1000ms");
+            Int64 intOneThousandMilisecondsTotalSeconds = objTimeString.Parse("1000ms");
 
             Assert.AreEqual(intOneThousandMilisecondsTotalSeconds, 1);
         }

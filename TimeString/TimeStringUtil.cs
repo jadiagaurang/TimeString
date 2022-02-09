@@ -46,7 +46,7 @@ namespace TimeString {
             }
         }
 
-        public Int64 parseToSeconds(String strTimeString) {
+        public Int64 Parse(String strTimeString, String strReturnUnit = "s") {
             Int64 intTotalSeconds = 0;
 
             strTimeString = strTimeString.ToLower();
@@ -71,15 +71,20 @@ namespace TimeString {
                 }
             }
 
-            return intTotalSeconds;
+            if (!String.IsNullOrEmpty(strReturnUnit)) {
+                return this.convert(intTotalSeconds, strReturnUnit);
+            }
+            else {
+                return intTotalSeconds;
+            }
         }
 
-        public TimeSpan parseToTimeSpan(String strTimeString) {
-            return TimeSpan.FromSeconds(this.parseToSeconds(strTimeString));
+        public TimeSpan ParseToTimeSpan(String strTimeString) {
+            return TimeSpan.FromSeconds(this.Parse(strTimeString));
         }
 
-        public DateTime parseToDateTime(String strTimeString) {
-            return DateTime.Now.AddSeconds(this.parseToSeconds(strTimeString));
+        public DateTime ParseToDateTime(String strTimeString) {
+            return DateTime.Now.AddSeconds(this.Parse(strTimeString));
         }
 
         private Int64 getSeconds(String strValue, String strUnit) {
@@ -110,6 +115,10 @@ namespace TimeString {
             unitValues.units["y"] = this.objDefaultOptions.daysPerYear * unitValues.units["d"];
 
             return unitValues;
+        }
+    
+        private Int64 convert(Int64 intTotalSeconds, String strReturnUnit) {
+            return Convert.ToInt64(intTotalSeconds / this.getUnitValues().units[this.getUnitKey(strReturnUnit)]);
         }
     }
 }
