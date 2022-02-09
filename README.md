@@ -71,4 +71,4 @@ Please see the [license file](https://github.com/jadiagaurang/TimeString/blob/ma
 
 ## Credit
 
-* This repo is a .Net Port of [timestring](https://github.com/mike182uk/timestring)
+* This repo is a .NET Port of [timestring](https://github.com/mike182uk/timestring)

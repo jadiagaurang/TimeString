@@ -57,5 +57,8 @@
     <None Include="packages.config" />
     <None Include="TimeString.nuspec" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\icon_timestring.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
