@@ -1,3 +1,5 @@
+[![NuGet](https://img.shields.io/nuget/dt/libphonenumber-csharp.svg)](https://www.nuget.org/packages/TimeString/)
+
 # TimeString
 
 Parse a human readable time string into a time based value.
