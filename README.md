@@ -1,4 +1,4 @@
-[![NuGet](https://img.shields.io/nuget/dt/libphonenumber-csharp.svg)](https://www.nuget.org/packages/TimeString/)
+[![NuGet](https://img.shields.io/nuget/dt/TimeString.svg)](https://www.nuget.org/packages/TimeString/)
 
 # TimeString
 
