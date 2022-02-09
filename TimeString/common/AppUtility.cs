@@ -8,15 +8,10 @@ using System.Threading.Tasks;
 
 using log4net;
 
-namespace timeString.common {
+namespace TimeString.common {
     public class AppUtility {
         private static readonly ILog objLogger = LogManager.GetLogger(typeof(AppUtility));
 
-        /// <summary>
-        /// If Enumbration has Description Attribute define then get the value of it or get just value back.
-        /// </summary>
-        /// <param name="value">Any enum option</param>
-        /// <returns>Description of passed enum or value.</returns>
         public static string getEnumDescription(Enum value) {
             if (value == null) {
                 FieldInfo fi = value.GetType().GetField(value.ToString());

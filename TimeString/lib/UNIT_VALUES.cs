@@ -1,29 +1,21 @@
 ﻿using System;
-using System.ComponentModel;
+using System.Collections.Generic;
 
 using log4net;
 
-namespace timeString.lib {
-    public enum UNIT_VALUES {
-        [Description("0.001")]
-        ms = 1,
+namespace TimeString.lib {
+    internal class UNIT_VALUES {
+        private static readonly ILog objLogger = LogManager.GetLogger(typeof(UNIT_VALUES));
 
-        [Description("1")]
-        s = 2,
-
-        [Description("60")]
-        m = 3,
-
-        [Description("3600")]
-        h = 4
+        public Dictionary<String, Double> units = new Dictionary<String, Double>() {
+            { "ms", 0.001 },
+            { "s", 1000 * 0.001 },
+            { "m", 60 * 1000 * 0.001 },
+            { "h", 60 * 60 * 1000 * 0.001 },
+            { "d", 24 * 60 * 60 * 1000 * 0.001 },
+            { "w", 7 * 24 * 60 * 60 * 1000 * 0.001 },
+            { "mth", (365.25 / 12) * (24 * 60 * 60 * 1000 * 0.001) },
+            { "y", 365.25 * 24 * 60 * 60 * 1000 * 0.001 }
+        };
     }
-
-    /*
-    class UNIT_VALUES {
-        public Double ms = 0.001;
-        public Double s = 1;
-        public Double m = 60;
-        public Double h = 3600;
-    }
-    */
 }

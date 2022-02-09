@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using log4net;
 
-namespace timeString.lib {
+namespace TimeString.lib {
     public class DEFAULT_OPTS {
         private static readonly ILog objLogger = LogManager.GetLogger(typeof(DEFAULT_OPTS));
 
