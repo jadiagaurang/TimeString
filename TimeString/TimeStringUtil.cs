@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-using TimeString.common;
 using TimeString.lib;
 
 using log4net;
@@ -14,12 +13,36 @@ namespace TimeString {
 
         private DEFAULT_OPTS objDefaultOptions = null;
 
+        public TimeStringUtil() {
+            this.objDefaultOptions = new DEFAULT_OPTS();
+        }
+
         public TimeStringUtil(DEFAULT_OPTS objCustomOptions) {
-            if (objCustomOptions == null) {
+            if (objCustomOptions != null) {
                 this.objDefaultOptions = new DEFAULT_OPTS();
+
+                if (objCustomOptions.hoursPerDay > 0) {
+                    this.objDefaultOptions.hoursPerDay = objCustomOptions.hoursPerDay;
+                }
+
+                if (objCustomOptions.daysPerWeek > 0) {
+                    this.objDefaultOptions.daysPerWeek = objCustomOptions.daysPerWeek;
+                }
+
+                if (objCustomOptions.weeksPerMonth > 0) {
+                    this.objDefaultOptions.weeksPerMonth = objCustomOptions.weeksPerMonth;
+                }
+
+                if (objCustomOptions.monthsPerYear > 0) {
+                    this.objDefaultOptions.monthsPerYear = objCustomOptions.monthsPerYear;
+                }
+
+                if (objCustomOptions.daysPerYear > 0) {
+                    this.objDefaultOptions.daysPerYear = objCustomOptions.daysPerYear;
+                }
             }
             else {
-                this.objDefaultOptions = objCustomOptions;
+                throw new ArgumentException("objCustomOptions can't be null or empty!");
             }
         }
 
@@ -49,6 +72,14 @@ namespace TimeString {
             }
 
             return intTotalSeconds;
+        }
+
+        public TimeSpan parseToTimeSpan(String strTimeString) {
+            return TimeSpan.FromSeconds(this.parseToSeconds(strTimeString));
+        }
+
+        public DateTime parseToDateTime(String strTimeString) {
+            return DateTime.Now.AddSeconds(this.parseToSeconds(strTimeString));
         }
 
         private Int64 getSeconds(String strValue, String strUnit) {
