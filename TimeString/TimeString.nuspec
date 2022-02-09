@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Gaurang Jadia</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+	<!--<licenseUrl>https://github.com/jadiagaurang/TimeString/blob/main/LICENSE</licenseUrl>-->
+	<license type="expression">MIT</license>
+    <projectUrl>https://github.com/jadiagaurang/TimeString</projectUrl>
+	<!--<iconUrl></iconUrl>-->
+	<repository type="git" url="https://github.com/jadiagaurang/TimeString" />
+    <description>Parse a human readable time string into a time based value.</description>
+    <releaseNotes>Initial Release for v1.0.0</releaseNotes>
+    <copyright>Copyright © 2022</copyright>
+    <tags>timeString TimeStringParser</tags>
+  </metadata>
+</package>
