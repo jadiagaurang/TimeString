@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-using TimeString.lib;
+using TimeString.src;
 
 namespace TimeString {
     public class TimeStringUtil {

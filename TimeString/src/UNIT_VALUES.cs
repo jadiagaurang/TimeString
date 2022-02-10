@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace TimeString.lib {
+namespace TimeString.src {
     internal class UNIT_VALUES {
         public Dictionary<String, Double> units = new Dictionary<String, Double>() {
             { "ms", 0.001 },

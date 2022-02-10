@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TimeString.lib {
+namespace TimeString.src {
     public class DEFAULT_OPTS {
         public Double hoursPerDay = 24;
         public Double daysPerWeek = 7;

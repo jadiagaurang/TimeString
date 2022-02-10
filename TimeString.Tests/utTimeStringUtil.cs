@@ -1,6 +1,6 @@
 ﻿using System;
 
-using TimeString.lib;
+using TimeString.src;
 using TimeStringUtil = TimeString.TimeStringUtil;
 
 using NUnit.Framework;
