@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package>
   <metadata>
-    <id>$id$</id>
+    <id>TimeString</id>
     <version>$version$</version>
-    <title>$title$</title>
+    <title>TimeString</title>
     <authors>Gaurang Jadia</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
 	<!--<licenseUrl>https://github.com/jadiagaurang/TimeString/blob/main/LICENSE</licenseUrl>-->
