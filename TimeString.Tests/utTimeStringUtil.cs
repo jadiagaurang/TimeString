@@ -3,12 +3,16 @@
 using TimeString.lib;
 using TimeStringUtil = TimeString.TimeStringUtil;
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace TimeString.Tests {
-    [TestClass]
     public class utTimeStringUtil {
-        [TestMethod]
+        [SetUp]
+        public void Setup() {
+
+        }
+
+        [Test]
         public void tmParseSimple() {
             TimeStringUtil objTimeString = new TimeStringUtil();
 
@@ -17,7 +21,7 @@ namespace TimeString.Tests {
             Assert.AreEqual(dblTotalSeconds, 109815);
         }
 
-        [TestMethod]
+        [Test]
         public void tmParseComplex() {
             TimeStringUtil objTimeString = new TimeStringUtil();
 
@@ -26,7 +30,7 @@ namespace TimeString.Tests {
             Assert.AreEqual(dblTotalSeconds, 39886216);
         }
 
-        [TestMethod]
+        [Test]
         public void tmParseMessyString() {
             TimeStringUtil objTimeString = new TimeStringUtil();
 
@@ -35,7 +39,7 @@ namespace TimeString.Tests {
             Assert.AreEqual(dblTotalSeconds, 844057);
         }
 
-        [TestMethod]
+        [Test]
         public void tmParseWithCustomDefaultOptions() {
             DEFAULT_OPTS objArgs = new DEFAULT_OPTS() {
                 hoursPerDay = 24,
@@ -52,7 +56,7 @@ namespace TimeString.Tests {
             Assert.AreEqual(dblTotalSeconds, 31557600);
         }
 
-        [TestMethod]
+        [Test]
         public void tmParseDayToHours() {
             TimeStringUtil objTimeString = new TimeStringUtil();
 
@@ -61,7 +65,7 @@ namespace TimeString.Tests {
             Assert.AreEqual(dblOneDayTotalHours, 24);
         }
 
-        [TestMethod]
+        [Test]
         public void tmParseToTimeSpan() {
             TimeStringUtil objTimeString = new TimeStringUtil();
 
@@ -70,7 +74,7 @@ namespace TimeString.Tests {
             Assert.AreEqual(tsNineDays, new TimeSpan(9, 0, 0, 0));
         }
 
-        [TestMethod]
+        [Test]
         public void tmParseToDateTime() {
             TimeStringUtil objTimeString = new TimeStringUtil();
 
@@ -79,7 +83,7 @@ namespace TimeString.Tests {
             Assert.AreEqual(dtEighteenDays.DayOfWeek, DateTime.Now.AddDays(18).DayOfWeek);
         }
 
-        [TestMethod]
+        [Test]
         public void tmParseYear() {
             TimeStringUtil objTimeString = new TimeStringUtil();
 
@@ -88,7 +92,7 @@ namespace TimeString.Tests {
             Assert.AreEqual(dblOneYearTotalSeconds, 31557600);
         }
 
-        [TestMethod]
+        [Test]
         public void tmParseMonth() {
             TimeStringUtil objTimeString = new TimeStringUtil();
 
@@ -97,7 +101,7 @@ namespace TimeString.Tests {
             Assert.AreEqual(dblTwoMonthsTotalSeconds, 5259600);
         }
 
-        [TestMethod]
+        [Test]
         public void tmParseWeek() {
             TimeStringUtil objTimeString = new TimeStringUtil();
 
@@ -106,7 +110,7 @@ namespace TimeString.Tests {
             Assert.AreEqual(dblFourWeeksTotalSeconds, 2419200);
         }
 
-        [TestMethod]
+        [Test]
         public void tmParseDay() {
             TimeStringUtil objTimeString = new TimeStringUtil();
 
@@ -115,7 +119,7 @@ namespace TimeString.Tests {
             Assert.AreEqual(dblSevenDaysTotalSeconds, 604800);
         }
 
-        [TestMethod]
+        [Test]
         public void tmParseHour() {
             TimeStringUtil objTimeString = new TimeStringUtil();
 
@@ -124,7 +128,7 @@ namespace TimeString.Tests {
             Assert.AreEqual(dblTwelveHoursTotalSeconds, 43200);
         }
 
-        [TestMethod]
+        [Test]
         public void tmParseMinute() {
             TimeStringUtil objTimeString = new TimeStringUtil();
 
@@ -133,7 +137,7 @@ namespace TimeString.Tests {
             Assert.AreEqual(dblThirtyMinutesTotalSeconds, 1800);
         }
 
-        [TestMethod]
+        [Test]
         public void tmParseSecond() {
             TimeStringUtil objTimeString = new TimeStringUtil();
 
@@ -142,7 +146,7 @@ namespace TimeString.Tests {
             Assert.AreEqual(dblTifteenSecondsTotalSeconds, 15);
         }
 
-        [TestMethod]
+        [Test]
         public void tmParseMilisecond() {
             TimeStringUtil objTimeString = new TimeStringUtil();
 
