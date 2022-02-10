@@ -1,3 +1,4 @@
+[![Compile and Deploy to NuGet Gallery](https://github.com/jadiagaurang/TimeString/actions/workflows/dotnet-nuget.yml/badge.svg)](https://github.com/jadiagaurang/TimeString/actions/workflows/dotnet-nuget.yml)
 [![NuGet](https://img.shields.io/nuget/dt/TimeString.svg)](https://www.nuget.org/packages/TimeString/)
 
 # TimeString
