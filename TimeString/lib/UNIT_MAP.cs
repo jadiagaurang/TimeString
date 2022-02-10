@@ -1,16 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using log4net;
 
 namespace TimeString.lib {
-    public static class UNIT_MAP {
-        private static readonly ILog objLogger = LogManager.GetLogger(typeof(UNIT_MAP));
-
+    internal static class UNIT_MAP {
         public static readonly Dictionary<String, IList<String>> units = new Dictionary<String, IList<String>>() {
             { "ms", new List<String> { "ms", "milli", "millisecond", "milliseconds" } },
             { "s", new List<String> { "s", "sec", "secs", "second", "seconds" } },

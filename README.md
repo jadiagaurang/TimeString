@@ -9,25 +9,25 @@ Parse a human readable time string into a time based value.
 1. Simple
 ```csharp
 TimeStringUtil objTimeString = new TimeStringUtil();
-Int64 intTotalSeconds = objTimeString.Parse("1d 6h 30m 15s");
+Double dblTotalSeconds = objTimeString.Parse("1d 6h 30m 15s");
 
-// intTotalSeconds = 109815
+// dblTotalSeconds = 109815
 ```
 
 2. Complex
 ```csharp
 TimeStringUtil objTimeString = new TimeStringUtil();
-Int64 intTotalSeconds = objTimeString.Parse("1y 2mth 4w 7d 12h 30m 15s 1000ms");
+Double dblTotalSeconds = objTimeString.Parse("1y 2mth 4w 7d 12h 30m 15s 1000ms");
 
-// intTotalSeconds = 39886216
+// dblTotalSeconds = 39886216
 ```
 
 3. Messy
 ```csharp
 TimeStringUtil objTimeString = new TimeStringUtil();
-Int64 intTotalSeconds = objTimeString.Parse("9 d  18hrs   27    mIn     3      6seC       1000        milli         ");
+Double dblTotalSeconds = objTimeString.Parse("9 d  18hrs   27    mIn     3      6seC       1000        milli         ");
 
-// intTotalSeconds = 844057
+// dblTotalSeconds = 844057
 ```
 
 4. Parse to TimeSpan
@@ -58,9 +58,9 @@ DEFAULT_OPTS objArgs = new DEFAULT_OPTS() {
 
 TimeStringUtil objTimeString = new TimeStringUtil(objArgs);
 
-Int64 intTotalSeconds = objTimeString.Parse("1y");
+Double dblTotalSeconds = objTimeString.Parse("1y");
 
-// intTotalSeconds = 31557600
+// dblTotalSeconds = 31557600
 ```
 
 All other examples are available [here](https://github.com/jadiagaurang/TimeString/blob/main/TimeString.Tests/utTimeStringUtil.cs).

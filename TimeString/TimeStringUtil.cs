@@ -5,12 +5,8 @@ using System.Text.RegularExpressions;
 
 using TimeString.lib;
 
-using log4net;
-
 namespace TimeString {
     public class TimeStringUtil {
-        private static readonly ILog objLogger = LogManager.GetLogger(typeof(TimeStringUtil));
-
         private DEFAULT_OPTS objDefaultOptions = null;
 
         public TimeStringUtil() {
@@ -46,8 +42,8 @@ namespace TimeString {
             }
         }
 
-        public Int64 Parse(String strTimeString, String strReturnUnit = "s") {
-            Int64 intTotalSeconds = 0;
+        public Double Parse(String strTimeString, String strReturnUnit = "s") {
+            Double dblTotalSeconds = 0;
 
             strTimeString = strTimeString.ToLower();
             strTimeString = Regex.Replace(strTimeString, @"[^.\w+-]+", "");
@@ -65,17 +61,17 @@ namespace TimeString {
                             Match mSubstringUnit = Regex.Match(strSubstring, @"[a-z]+");
                             String strUnit = (mSubstringUnit != null) ? mSubstringUnit.Value : null;
 
-                            intTotalSeconds += this.getSeconds(strValue, strUnit);
+                            dblTotalSeconds += this.getSeconds(strValue, strUnit);
                         }
                     }
                 }
             }
 
             if (!String.IsNullOrEmpty(strReturnUnit)) {
-                return this.convert(intTotalSeconds, strReturnUnit);
+                return this.convert(dblTotalSeconds, strReturnUnit);
             }
             else {
-                return intTotalSeconds;
+                return dblTotalSeconds;
             }
         }
 
@@ -87,11 +83,11 @@ namespace TimeString {
             return DateTime.Now.AddSeconds(this.Parse(strTimeString));
         }
 
-        private Int64 getSeconds(String strValue, String strUnit) {
-            Int32 intValue = 0;
+        private Double getSeconds(String strValue, String strUnit) {
+            Double dblValue = 0;
 
-            if (Int32.TryParse(strValue, out intValue)) {
-                return Convert.ToInt64(intValue * this.getUnitValues().units[this.getUnitKey(strUnit)]);
+            if (Double.TryParse(strValue, out dblValue)) {
+                return Convert.ToDouble(dblValue * this.getUnitValues().units[this.getUnitKey(strUnit)]);
             }
 
             return 0;
@@ -117,8 +113,8 @@ namespace TimeString {
             return unitValues;
         }
     
-        private Int64 convert(Int64 intTotalSeconds, String strReturnUnit) {
-            return Convert.ToInt64(intTotalSeconds / this.getUnitValues().units[this.getUnitKey(strReturnUnit)]);
+        private Double convert(Double dblTotalSeconds, String strReturnUnit) {
+            return Convert.ToDouble(dblTotalSeconds / this.getUnitValues().units[this.getUnitKey(strReturnUnit)]);
         }
     }
 }

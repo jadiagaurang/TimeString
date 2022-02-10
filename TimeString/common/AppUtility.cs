@@ -1,18 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-
-using log4net;
 
 namespace TimeString.common {
     public class AppUtility {
-        private static readonly ILog objLogger = LogManager.GetLogger(typeof(AppUtility));
-
-        public static string getEnumDescription(Enum value) {
+        internal static string getEnumDescription(Enum value) {
             if (value == null) {
                 FieldInfo fi = value.GetType().GetField(value.ToString());
 
