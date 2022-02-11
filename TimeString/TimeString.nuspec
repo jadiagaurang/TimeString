@@ -13,9 +13,9 @@
 	<iconUrl>https://github.com/jadiagaurang/TimeString/raw/main/TimeString/assets/icon_timestring.png</iconUrl>
 	<repository type="git" url="https://github.com/jadiagaurang/TimeString" />
     <description>Parse a human readable time string into a time based value.</description>
-    <releaseNotes>Release for v3.0.0</releaseNotes>
+    <releaseNotes>Release for v$version$</releaseNotes>
     <copyright>Copyright © 2022</copyright>
-    <tags>timeString TimeStringParser</tags>
+    <tags>TimeString TimeStringParser</tags>
     <dependencies>
 	  <group targetFramework="netstandard2.0" />
     </dependencies>
