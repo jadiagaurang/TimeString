@@ -1,9 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
 	<NuspecFile>TimeString.nuspec</NuspecFile>
 	<NuspecProperties>version=$(PackageVersion)</NuspecProperties>
   </PropertyGroup>
-
+  <ItemGroup>
+    <README Include="..\README.md" />
+  </ItemGroup>
+  <Target Name="CopyReadMe" AfterTargets="Build">
+    <Message Text="START: Copy README.md to docs\" Importance="High" />
+    <Copy SourceFiles="@(README)" DestinationFolder=".\docs\" />
+	  <Message Text="END: Copy README.md to docs\" Importance="High" />
+  </Target>
 </Project>

@@ -5,6 +5,7 @@
     <version>$version$</version>
     <title>TimeString</title>
     <authors>Gaurang Jadia</authors>
+	<readme>docs\README.md</readme>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
 	<!--<licenseUrl>https://github.com/jadiagaurang/TimeString/blob/main/LICENSE</licenseUrl>-->
 	<license type="expression">MIT</license>
@@ -18,5 +19,8 @@
     <dependencies>
 	  <group targetFramework="netstandard2.0" />
     </dependencies>
+	<files>
+		<file src="..\README.md" target="docs\" />
+	</files>
   </metadata>
 </package>
